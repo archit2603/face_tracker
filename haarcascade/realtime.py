@@ -12,13 +12,13 @@ def outline_faces(img):
     profile = profileface.detectMultiScale(gray, 1.2, 4) # detect profile faces
 
     # outline frontal faces, if any
-    if not frontal == []:
+    if len(frontal) != 0:
         for face in frontal:
             (x, y, w, h) = face
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 3)
     
     # outline profile faces, if any
-    if not profile == []:
+    if len(profile) != 0:
         for face in profile:
             (x, y, w, h) = face
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 3)
